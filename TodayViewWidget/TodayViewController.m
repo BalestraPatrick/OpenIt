@@ -35,7 +35,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Start Value if there are no buttons
     [self setPreferredContentSize:CGSizeMake(0, 45)];
     
     if (iPad) {
@@ -65,16 +64,6 @@
     self.actions = [defaults objectForKey:@"actions"];
     
     NSLog(@"Actions in NC: %@", self.actions);
-    
-    if (self.actions.count == 0) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, self.view.frame.size.width-30, 45)];
-        label.text = @"Add your shortcuts here from the Open It app.";
-        label.numberOfLines = 0;
-        label.textColor = [UIColor blackColor];
-        label.tintColor = [UIColor blackColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        [self.view addSubview:label];
-    }
     
     __block CGRect frame = self.firstFrame;
 
@@ -112,17 +101,32 @@
         [self.view addSubview:button];
     }];
     
-    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:[UIVibrancyEffect notificationCenterVibrancyEffect]];
-    effectView.frame = self.view.bounds;
-    effectView.autoresizingMask = self.view.autoresizingMask;
-    
-    __strong UIView *oldView = self.view;
-    
-    self.view = effectView;
-    
-    [effectView.contentView addSubview:oldView];
-    
-    self.view.tintColor = [UIColor clearColor];
+    if (self.actions.count == 0) {
+        UILabel *label = [[UILabel alloc] init];
+        if (iPad) {
+            label.frame = CGRectMake(15, 0, 560, 45);
+        } else {
+            label.frame = CGRectMake(15, 0, 295, 45);
+        }
+        label.text = @"Add your shortcuts here from the Open It app.";
+        label.numberOfLines = 0;
+        label.textColor = [UIColor whiteColor];
+        label.tintColor = [UIColor blackColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        [self.view addSubview:label];
+    } else {
+        UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:[UIVibrancyEffect notificationCenterVibrancyEffect]];
+        effectView.frame = self.view.bounds;
+        effectView.autoresizingMask = self.view.autoresizingMask;
+        
+        __strong UIView *oldView = self.view;
+        
+        self.view = effectView;
+        
+        [effectView.contentView addSubview:oldView];
+        
+        self.view.tintColor = [UIColor clearColor];
+    }
     
 }
 
@@ -132,11 +136,6 @@
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-    // Perform any setup necessary in order to update the view.
-    
-    // If an error is encoutered, use NCUpdateResultFailed
-    // If there's no update required, use NCUpdateResultNoData
-    // If there's an update, use NCUpdateResultNewData
 
     completionHandler(NCUpdateResultNewData);
 }

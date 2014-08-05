@@ -10,7 +10,12 @@
 
 @implementation SchemeBuilder
 
-- (NSString *)buildSchemeWithDictionary:(NSDictionary *)dictionary {
+- (NSString *)buildSchemeWithArray:(NSArray *)array {
+    
+    NSMutableDictionary *dictionary = [NSMutableDictionary new];
+    [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [dictionary addEntriesFromDictionary:obj];
+    }];
     
     NSString *actionType = dictionary[@"Type"];
     

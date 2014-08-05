@@ -10,11 +10,10 @@
 
 @interface ActionDetailViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
-@property (strong, nonatomic) NSDictionary *detailDictionary;
+@property (strong, nonatomic) NSMutableArray *shortcutArray;
+@property (nonatomic) BOOL pushedDetail;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
-@property (weak, nonatomic) UITextField *titleTextField;
-@property (weak, nonatomic) UITextField *schemeTextField;
 
 - (IBAction)save:(id)sender;
 

@@ -29,8 +29,6 @@
     NSLog(@"Loaded actions in app: %@", self.actions);
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addNewAction:) name:@"AddNewAction" object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateAction:) name:@"UpdateAction" object:nil];
-    
     
 }
 
@@ -45,25 +43,19 @@
     NSMutableArray *extensionActions = [NSMutableArray new];
     
     [self.actions enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSString *scheme = [builder buildSchemeWithDictionary:obj];
-        [extensionActions addObject:@{@"Title" : self.actions[idx][@"Title"], @"Scheme" : scheme}];
+        NSString *scheme = [builder buildSchemeWithArray:obj];
+        [extensionActions addObject:@{@"Title" : obj[0][@"Title"], @"Scheme" : scheme}];
     }];
     
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.actions"];
     [sharedDefaults setObject:[extensionActions mutableCopy] forKey:@"actions"];
     [sharedDefaults synchronize];
-    NSLog(@"Saved new array in extension %@", extensionActions);
 }
 
-- (void)addNewAction:(NSNotification *)notification {
-    NSLog(@"Adding %@ to self.actions %@", notification.object, self.actions);
-    [self.actions addObject:(NSDictionary *)notification.object];
+- (void)addNewAction:(NSNotification *)notification {    
+    [self.actions addObject:notification.object];
     [self.tableView reloadData];
     [self saveActions];
-}
-
-- (void)updateAction:(NSNotification *)notification {
-    // Update self.actions without adding one more
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -78,8 +70,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    cell.textLabel.text = self.actions[indexPath.row][@"Title"];
-    cell.detailTextLabel.text = self.actions[indexPath.row][@"Type"];
+    cell.textLabel.text = self.actions[indexPath.row][0][@"Title"];
+    cell.detailTextLabel.text = self.actions[indexPath.row][1][@"Type"];
     
     return cell;
 }
@@ -93,16 +85,14 @@
         [self.actions removeObjectAtIndex:indexPath.row];
         [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
         [self saveActions];
-
     }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"DetailAction"]) {
-        // Pass current action dictionary to detail
-        NSLog(@"Showing detail");
         ActionDetailViewController *actionDetail = (ActionDetailViewController *)segue.destinationViewController;
-        actionDetail.detailDictionary = self.actions[[self.tableView indexPathForSelectedRow].row];
+        actionDetail.shortcutArray = self.actions[[self.tableView indexPathForSelectedRow].row];
+        actionDetail.pushedDetail = YES;
     }
 }
 

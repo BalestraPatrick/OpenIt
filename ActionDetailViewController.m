@@ -10,12 +10,7 @@
 
 @interface ActionDetailViewController ()
 
-@property (nonatomic) BOOL isNewAction;
-
-@property (strong, nonatomic) NSArray *shortcutDictionary;
-@property (nonatomic) BOOL hasShortcut;
-
-@property (strong, nonatomic) NSMutableDictionary *actionDictionary;
+@property (strong, nonatomic) NSMutableArray *actionArray;
 
 @end
 
@@ -23,23 +18,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    if (self.detailDictionary) {
-        self.isNewAction = NO;
-        self.hasShortcut = YES;
-        self.title = self.detailDictionary[@"title"];
-        self.titleTextField.text = self.detailDictionary[@"title"];
-        self.schemeTextField.text = self.detailDictionary[@"scheme"];
-        NSLog(@"Detail dictionary: %@", self.detailDictionary);
-    } else {
-        self.isNewAction = YES;
-        self.hasShortcut = NO;
-        self.title = @"New Action";
+
+    if (self.shortcutArray.count != 0) {
+        self.title = self.shortcutArray[0][@"Title"];
     }
     
-    self.actionDictionary = [NSMutableDictionary new];
+    if (!self.shortcutArray) {
+        self.shortcutArray = [NSMutableArray new];
+    }
     
-    self.shortcutDictionary = [NSArray new];
+    self.actionArray = [NSMutableArray new];
     
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     
@@ -47,25 +35,21 @@
 }
 
 - (IBAction)save:(id)sender {
-    // Save action dictionary with all the data for this action
-    for (UIView *textField in self.view.subviews) {
-        if ([textField isKindOfClass:[UITextField class]]) {
-            [self textFieldDidEndEditing:(UITextField *)textField];
-        }
-    }
-    if (self.isNewAction) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"AddNewAction" object:self.actionDictionary];
-    } else {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdateAction" object:self.actionDictionary];
-    }
+    NSLog(@"SAVED %@", self.actionArray);
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"AddNewAction" object:self.actionArray];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)addedShortcut:(NSNotification *)notification {
-    self.hasShortcut = YES;
-    self.shortcutDictionary = notification.object;
-    
+    self.shortcutArray = [notification.object mutableCopy];
+    //[self.shortcutArray insertObject:@{@"Title" : @""} atIndex:0];
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    if (self.pushedDetail) {
+        NSLog(@"Presenting a detail action");
+    }
 }
 
 # pragma UITableView
@@ -78,14 +62,10 @@
     if (section == 0) {
         return 1;
     } else if (section == 1) {
-        if (!self.hasShortcut) {
+        if (self.shortcutArray.count == 0) {
             return 1;
         } else {
-            if (self.detailDictionary) {
-                return self.detailDictionary.count;
-            } else {
-                return self.shortcutDictionary.count;
-            }
+            return self.pushedDetail ? self.shortcutArray.count - 1: self.shortcutArray.count;
         }
     }
     return 0;
@@ -117,37 +97,65 @@
             [cell.contentView addSubview:textField];
             
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            
-            if (self.detailDictionary) {
-                textField.text = self.detailDictionary[@"Title"];
+
+            if (self.shortcutArray.count != 0) {
+                textField.text = self.shortcutArray[0][@"Title"];
             }
         }
     } else if (indexPath.section == 1) {
         if (indexPath.row == 0) {
-            if (!self.hasShortcut) {
+            if (self.shortcutArray.count == 0) {
                 cell.textLabel.text = @"+";
                 cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:30];
                 cell.textLabel.textAlignment = NSTextAlignmentCenter;
             }
         }
         
-        [self.shortcutDictionary enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSLog(@"self.shortcutarray %@", self.shortcutArray);
+        [self.shortcutArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            if (self.pushedDetail) {
+                NSLog(@"presenting pushed details");
+                idx++;
+                if (indexPath.row + 1 == idx) {
+                    cell.textLabel.text = [[self.shortcutArray[idx] allKeys] firstObject];
+                    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 200, 35)];
+                    textField.textAlignment = NSTextAlignmentRight;
+                    textField.tag = idx;
+                    textField.delegate = self;
+                    textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+                    
+                    textField.placeholder = [[self.shortcutArray[idx] allValues] firstObject];
+                    cell.accessoryView = textField;
+                    
+                    if (idx == 0 || idx == 1) {
+                        textField.text = [[self.shortcutArray[idx] allValues] firstObject];
+                    }
+                    if (idx == 1) {
+                        UIImageView *imageIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.shortcutArray[0][@"Type"]]];
+                        imageIcon.frame = CGRectMake(0, 0, 35, 35);
+                        cell.accessoryView = imageIcon;
+                    }
+                    
+                    [self textFieldDidEndEditing:textField];
+                }
+            }
             if (indexPath.row == idx) {
-                cell.textLabel.text = [[self.shortcutDictionary[indexPath.row] allKeys] firstObject];
+                cell.textLabel.text = [[self.shortcutArray[idx] allKeys] firstObject];
                 UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 200, 35)];
                 textField.textAlignment = NSTextAlignmentRight;
-                textField.tag = indexPath.row;
+                textField.tag = idx;
                 textField.delegate = self;
                 textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
                 
-                textField.placeholder = [[self.shortcutDictionary[indexPath.row] allValues] firstObject];
+                textField.placeholder = [[self.shortcutArray[idx] allValues] firstObject];
                 cell.accessoryView = textField;
                 
-                if (indexPath.row == 0 || indexPath.row == 1) {
-                    textField.text = [[self.shortcutDictionary[indexPath.row] allValues] firstObject];
+                if (idx == 0 || idx == 1) {
+                    textField.text = [[self.shortcutArray[idx] allValues] firstObject];
                 }
-                if (indexPath.row == 0) {
-                    UIImageView *imageIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[[self.shortcutDictionary[indexPath.row] allValues] firstObject]]];
+                if (idx == 0) {
+                    UIImageView *imageIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.shortcutArray[0][@"Type"]]];
+                    imageIcon.frame = CGRectMake(0, 0, 35, 35);
                     cell.accessoryView = imageIcon;
                 }
                 
@@ -155,8 +163,10 @@
             }
         }];
         
-        if (self.detailDictionary) {
-            NSString *key = [self.detailDictionary allKeys][indexPath.row];
+        
+        /*if (self.shortcutArray.count != 0) {
+            NSDictionary *rowDictionary = self.shortcutArray[indexPath.row + 1];
+            NSString *key = [[rowDictionary allKeys] firstObject];
             cell.textLabel.text = key;
             UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 200, 35)];
             textField.textAlignment = NSTextAlignmentRight;
@@ -164,8 +174,14 @@
             textField.delegate = self;
             textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
             cell.accessoryView = textField;
-            textField.text = self.detailDictionary[key];
-        }
+            textField.text = self.shortcutArray[indexPath.row + 1][key];
+            
+            if (indexPath.row == 0) {
+                UIImageView *imageIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.shortcutArray[1][@"Type"]]];
+                imageIcon.frame = CGRectMake(0, 0, 35, 35);
+                cell.accessoryView = imageIcon;
+            }
+        }*/
     }
     
     return cell;
@@ -175,7 +191,7 @@
     if (indexPath.section == 0) {
         
     } else if (indexPath.section == 1) {
-        if (!self.hasShortcut) {
+        if (self.shortcutArray.count == 0) {
             [self presentViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"NewAction"] animated:YES completion:nil];
         }
     }
@@ -190,12 +206,21 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
+    NSLog(@"Textfield text %d", textField.tag);
     if (textField.tag == -1) {
-        [self.actionDictionary addEntriesFromDictionary:@{@"Title" : textField.text}];
+        [self.actionArray addObject:@{@"Title" : textField.text}];
     } else {
-        [self.actionDictionary addEntriesFromDictionary:@{[[self.shortcutDictionary[textField.tag] allKeys] firstObject] : textField.text}];
+        [self.actionArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSMutableDictionary *dictionary = [(NSDictionary *)obj mutableCopy];
+            if ([[dictionary allKeys] containsObject:[[self.shortcutArray[textField.tag] allKeys] firstObject]]) {
+                [dictionary setObject:textField.text forKey:[[self.shortcutArray[textField.tag] allKeys] firstObject]];
+                [self.actionArray setObject:dictionary atIndexedSubscript:idx];
+                return;
+            }
+        }];
+        [self.actionArray addObject:@{[[self.shortcutArray[textField.tag] allKeys] firstObject] : textField.text}];
     }
-    NSLog(@"ActionDictionary = %@", self.actionDictionary);
+    NSLog(@"ACtion array %@", self.actionArray);
 }
 
 @end

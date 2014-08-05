@@ -33,6 +33,7 @@
 		AEEFD6D71983F2E60039EBDC /* Mail.png in Resources */ = {isa = PBXBuildFile; fileRef = AEEFD6D41983F2E60039EBDC /* Mail.png */; };
 		AEEFD6D91983F2E60039EBDC /* Messages.png in Resources */ = {isa = PBXBuildFile; fileRef = AEEFD6D61983F2E60039EBDC /* Messages.png */; };
 		AEEFD6DB1983F4360039EBDC /* Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = AEEFD6DA1983F4360039EBDC /* Phone.png */; };
+		AEFB5664198E307700857921 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFB5663198E307700857921 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,8 @@
 		AEEFD6D41983F2E60039EBDC /* Mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mail.png; sourceTree = "<group>"; };
 		AEEFD6D61983F2E60039EBDC /* Messages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Messages.png; sourceTree = "<group>"; };
 		AEEFD6DA1983F4360039EBDC /* Phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phone.png; sourceTree = "<group>"; };
+		AEFB5662198E307700857921 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		AEFB5663198E307700857921 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +191,8 @@
 				AEAA8C1A198130E300DCF69C /* ActionDetailViewController.m */,
 				AEAA8C211981854E00DCF69C /* ChooseActionViewController.h */,
 				AEAA8C221981854E00DCF69C /* ChooseActionViewController.m */,
+				AEFB5662198E307700857921 /* SettingsViewController.h */,
+				AEFB5663198E307700857921 /* SettingsViewController.m */,
 				AEEFD6D11983BFE10039EBDC /* SchemeBuilder.h */,
 				AEEFD6D21983BFE10039EBDC /* SchemeBuilder.m */,
 				AEA25F7819798B5B009A21AB /* Main.storyboard */,
@@ -428,6 +433,7 @@
 				AEEFD6D31983BFE10039EBDC /* SchemeBuilder.m in Sources */,
 				AEA25F7119798B5B009A21AB /* main.m in Sources */,
 				AEAA8C1B198130E300DCF69C /* ActionDetailViewController.m in Sources */,
+				AEFB5664198E307700857921 /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

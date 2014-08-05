@@ -10,6 +10,6 @@
 
 @interface SchemeBuilder : NSObject
 
-- (NSString *)buildSchemeWithDictionary:(NSDictionary *)dictionary;
+- (NSString *)buildSchemeWithArray:(NSArray *)array;
 
 @end

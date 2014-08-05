@@ -58,6 +58,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"YEAHHH %@", self.actions[indexPath.row]);
     [[NSNotificationCenter defaultCenter] postNotificationName:@"AddedShortcut" object:self.actions[indexPath.row]];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
