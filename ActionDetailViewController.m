@@ -127,11 +127,11 @@
                     textField.placeholder = [[self.shortcutArray[idx] allValues] firstObject];
                     cell.accessoryView = textField;
                     
-                    if (idx == 0 || idx == 1) {
+                    if (idx == 2 || idx == 3) {
                         textField.text = [[self.shortcutArray[idx] allValues] firstObject];
                     }
                     if (idx == 1) {
-                        UIImageView *imageIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.shortcutArray[0][@"Type"]]];
+                        UIImageView *imageIcon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:self.shortcutArray[1][@"Type"]]];
                         imageIcon.frame = CGRectMake(0, 0, 35, 35);
                         cell.accessoryView = imageIcon;
                     }
