@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YourActionsViewController : UITableViewController 
+@interface YourActionsViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+
+- (IBAction)edit:(id)sender;
 
 @end

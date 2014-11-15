@@ -10,13 +10,12 @@
 #import <NotificationCenter/NotificationCenter.h>
 @import QuartzCore;
 
-#define iPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-
 @interface TodayViewController () <NCWidgetProviding>
 
 @property (strong, nonatomic) NSArray *actions;
-
-@property (nonatomic) CGRect firstFrame;
+@property (nonatomic) CGFloat screenWidth;
+@property (nonatomic) CGFloat edgesPadding;
+@property (nonatomic) CGFloat buttonsPadding;
 
 @end
 
@@ -24,10 +23,7 @@
 
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(userDefaultsDidChange:)
-                                                     name:NSUserDefaultsDidChangeNotification
-                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDefaultsDidChange:) name:NSUserDefaultsDidChangeNotification object:nil];
     }
     return self;
 }
@@ -36,19 +32,18 @@
     [super viewDidLoad];
     
     [self setPreferredContentSize:CGSizeMake(0, 45)];
-    
-    if (iPad) {
-        self.firstFrame = CGRectMake(-45, 10, 90, 25);
-    } else {
-        self.firstFrame = CGRectMake(-85, 10, 90, 25);
-    }
-    
-    self.actions = [NSArray new];
-    
-    [self updateUI];
 
+    self.actions = [NSArray new];
+
+    self.edgesPadding = 15.0;
+    self.buttonsPadding = 10.0;
+    
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    self.screenWidth = self.view.frame.size.width;
+    [self updateUI];
+}
 - (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets {
     defaultMarginInsets.bottom = 0;
     defaultMarginInsets.left = 0;
@@ -60,84 +55,80 @@
 }
 
 - (void)updateUI {
+    
     NSUserDefaults *defaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.actions"];
     self.actions = [defaults objectForKey:@"actions"];
     
-    NSLog(@"Actions in NC: %@", self.actions);
-    
-    __block CGRect frame = self.firstFrame;
-
-    [self.actions enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+    if (self.actions.count > 0) {
         
-        NSLog(@"Current frame %@", NSStringFromCGRect(frame));
-        if (!iPad && (idx == 3 || idx == 6 || idx == 9 || idx == 12)) {
-            frame.origin.x = -85;
-            frame.origin.y += 35;
-            CGSize currentSize = [self preferredContentSize];
-            currentSize.height += 35;
-            [self setPreferredContentSize:currentSize];
-        } else if (iPad && (idx == 5 || idx == 10)) {
-            frame.origin.x = -45;
-            frame.origin.y += 35;
-            CGSize currentSize = [self preferredContentSize];
-            currentSize.height += 35;
-            [self setPreferredContentSize:currentSize];
-        }
-        frame.origin.x += 100;
-
-        NSLog(@"Title: %@", self.actions[idx][@"Title"]);
-        UIButton *button = [[UIButton alloc] initWithFrame:frame];
-        button.layer.cornerRadius = 3.0;
-        [button setTitle:self.actions[idx][@"Title"] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [button setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-        button.backgroundColor = [UIColor whiteColor];
-        button.titleLabel.textAlignment =   NSTextAlignmentCenter;
-        button.tintColor = [UIColor blackColor];
-        button.tag = idx;
-        [button.layer setMasksToBounds:YES];
+        __block CGRect frame = CGRectMake(0, 10, 0, 25);
         
-        [button addTarget:self action:@selector(open:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:button];
-    }];
-    
-    if (self.actions.count == 0) {
-        UILabel *label = [[UILabel alloc] init];
-        if (iPad) {
-            label.frame = CGRectMake(15, 0, 560, 45);
-        } else {
-            label.frame = CGRectMake(15, 0, 295, 45);
+        CGFloat spaceAvailable = self.screenWidth - (2 * self.edgesPadding);
+        NSInteger numberOfButtonsInARow = 3;
+        if (spaceAvailable > 400.0) {
+            numberOfButtonsInARow = 4;
         }
-        label.text = @"Add your shortcuts here from the Open It app.";
-        label.numberOfLines = 0;
-        label.textColor = [UIColor whiteColor];
-        label.tintColor = [UIColor blackColor];
-        label.textAlignment = NSTextAlignmentCenter;
-        [self.view addSubview:label];
-    } else {
+        CGFloat buttonWidth = (spaceAvailable - ((numberOfButtonsInARow - 1) * self.buttonsPadding)) / numberOfButtonsInARow;
+        frame.size.width = buttonWidth;
+        
+        NSInteger numberOfRows = (self.actions.count % numberOfButtonsInARow) == 0 ? (self.actions.count / numberOfButtonsInARow) : (self.actions.count / numberOfButtonsInARow) + 1;
+        
+        [self setPreferredContentSize:CGSizeMake(0, 10 + (numberOfRows * 35))];
+        
+        // Add buttons
+        [self.actions enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+
+            // High math to calculate position of the buttons :)
+            if (idx < numberOfButtonsInARow) {
+                frame.origin.x = self.edgesPadding + (idx * self.buttonsPadding) + (idx * buttonWidth);
+            } else {
+                NSInteger row = (idx / numberOfButtonsInARow);
+                NSInteger newIdx = idx - (numberOfButtonsInARow * row);
+                frame.origin.y = 10 + (row * 35);
+                frame.origin.x = self.edgesPadding + (newIdx * self.buttonsPadding) + (newIdx * buttonWidth);
+            }
+
+            UIButton *button = [[UIButton alloc] initWithFrame:frame];
+            button.layer.cornerRadius = 5.0;
+            [button setTitle:self.actions[idx][@"Title"] forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [button setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+            button.backgroundColor = [UIColor whiteColor];
+            button.titleLabel.textAlignment =   NSTextAlignmentCenter;
+            button.tintColor = [UIColor whiteColor];
+            button.tag = idx;
+            [button.layer setMasksToBounds:YES];
+            
+            [button addTarget:self action:@selector(open:) forControlEvents:UIControlEventTouchUpInside];
+            [self.view addSubview:button];
+            
+        }];
+        
+        // Add Visual Effect View with the standard notification center vibrancy effect
         UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:[UIVibrancyEffect notificationCenterVibrancyEffect]];
         effectView.frame = self.view.bounds;
         effectView.autoresizingMask = self.view.autoresizingMask;
-        
         __strong UIView *oldView = self.view;
-        
         self.view = effectView;
-        
         [effectView.contentView addSubview:oldView];
-        
         self.view.tintColor = [UIColor clearColor];
+        
+    } else {
+        // Show instructions label to show
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(self.edgesPadding, 0, self.screenWidth - self.edgesPadding, 45)];
+        label.text = @"Add your shortcuts in the Open It app.";
+        label.numberOfLines = 0;
+        label.textColor = [UIColor whiteColor];
+        label.tintColor = [UIColor whiteColor];
+        label.textAlignment = NSTextAlignmentCenter;
+        [self.view addSubview:label];
     }
     
 }
 
 - (void)open:(UIButton *)button {
-    NSLog(@"Opening shortcut (%@)", self.actions[button.tag][@"Scheme"]);
+    // Open action
     [[self extensionContext] openURL:[NSURL URLWithString:self.actions[button.tag][@"Scheme"]] completionHandler:nil];
-}
-
-- (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-
-    completionHandler(NCUpdateResultNewData);
 }
 
 @end

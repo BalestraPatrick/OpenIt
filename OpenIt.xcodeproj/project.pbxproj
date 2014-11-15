@@ -7,20 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0C66F119A339B2004B3345 /* Dropbox.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0C66F019A339B2004B3345 /* Dropbox.png */; };
+		AE0C66F419A33A5D004B3345 /* Fantastical 2.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0C66F219A33A5D004B3345 /* Fantastical 2.png */; };
+		AE0C66F519A33A5D004B3345 /* Foursquare.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0C66F319A33A5D004B3345 /* Foursquare.png */; };
+		AE0C66F719A33A8F004B3345 /* IFTTT.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0C66F619A33A8F004B3345 /* IFTTT.png */; };
+		AE0C66F919A33AFE004B3345 /* Launch Center Pro.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0C66F819A33AFE004B3345 /* Launch Center Pro.png */; };
+		AE0C66FD19A33C17004B3345 /* Lyft.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0C66FC19A33C17004B3345 /* Lyft.png */; };
+		AE0C66FF19A33C49004B3345 /* Swarm.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0C66FE19A33C49004B3345 /* Swarm.png */; };
+		AE0C670119A33CAB004B3345 /* Pebble.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0C670019A33CAB004B3345 /* Pebble.png */; };
+		AE0C670319A33CC5004B3345 /* Skype.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0C670219A33CC5004B3345 /* Skype.png */; };
+		AE0C670519A33D31004B3345 /* Spotify.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0C670419A33D31004B3345 /* Spotify.png */; };
+		AE0C670719A33D4E004B3345 /* Starbucks.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0C670619A33D4E004B3345 /* Starbucks.png */; };
+		AE0C670919A33D99004B3345 /* TodoMovies 3.png in Resources */ = {isa = PBXBuildFile; fileRef = AE0C670819A33D99004B3345 /* TodoMovies 3.png */; };
+		AE29FB59199A4B8A00AF4567 /* Custom.png in Resources */ = {isa = PBXBuildFile; fileRef = AE29FB58199A4B8A00AF4567 /* Custom.png */; };
+		AE3544AF199A12C9003A70F5 /* Clear.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3544AE199A12C9003A70F5 /* Clear.png */; };
+		AE3544B1199A1325003A70F5 /* Pocket.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3544B0199A1325003A70F5 /* Pocket.png */; };
+		AE3544B5199A13E1003A70F5 /* Uber.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3544B4199A13E1003A70F5 /* Uber.png */; };
+		AE3544B7199A1901003A70F5 /* Messenger.png in Resources */ = {isa = PBXBuildFile; fileRef = AE3544B6199A1901003A70F5 /* Messenger.png */; };
+		AE440B0E1A0828E6008BDC18 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AE440B0D1A0828E6008BDC18 /* Launch Screen.xib */; };
 		AE5EC7A2198B974C0040CF0A /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5EC7A1198B974C0040CF0A /* Settings@2x.png */; };
 		AE5EC7A4198B982D0040CF0A /* Add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE5EC7A3198B982D0040CF0A /* Add@2x.png */; };
+		AE6A6D301994CDC600ABC6C7 /* Maps.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6A6D2F1994CDC600ABC6C7 /* Maps.png */; };
+		AE6A6D321994CF2B00ABC6C7 /* Calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = AE6A6D311994CF2B00ABC6C7 /* Calendar.png */; };
+		AEA2267C1998F3FA009AF1DF /* Instagram.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA2267B1998F3FA009AF1DF /* Instagram.png */; };
+		AEA2267E1998F3FD009AF1DF /* WhatsApp.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA2267D1998F3FD009AF1DF /* WhatsApp.png */; };
+		AEA226801998F400009AF1DF /* Tweetbot.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA2267F1998F400009AF1DF /* Tweetbot.png */; };
+		AEA226821999003D009AF1DF /* Safari.png in Resources */ = {isa = PBXBuildFile; fileRef = AEA226811999003D009AF1DF /* Safari.png */; };
 		AEA25F7119798B5B009A21AB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA25F7019798B5B009A21AB /* main.m */; };
 		AEA25F7419798B5B009A21AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA25F7319798B5B009A21AB /* AppDelegate.m */; };
 		AEA25F7A19798B5B009A21AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEA25F7819798B5B009A21AB /* Main.storyboard */; };
 		AEA25F7C19798B5B009A21AB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEA25F7B19798B5B009A21AB /* Images.xcassets */; };
-		AEA25F8819798B5B009A21AB /* OpenItTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA25F8719798B5B009A21AB /* OpenItTests.m */; };
 		AEA25F9819798B6F009A21AB /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEA25F9719798B6F009A21AB /* NotificationCenter.framework */; };
 		AEA25F9E19798B6F009A21AB /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA25F9D19798B6F009A21AB /* TodayViewController.m */; };
 		AEA25FA019798B6F009A21AB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEA25F9F19798B6F009A21AB /* MainInterface.storyboard */; };
 		AEA25FA319798B6F009A21AB /* TodayViewWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AEA25F9519798B6F009A21AB /* TodayViewWidget.appex */; };
 		AEAA8C1B198130E300DCF69C /* ActionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAA8C1A198130E300DCF69C /* ActionDetailViewController.m */; };
 		AEAA8C231981854E00DCF69C /* ChooseActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEAA8C221981854E00DCF69C /* ChooseActionViewController.m */; };
-		AEAA8C251981A47C00DCF69C /* Actions.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEAA8C241981A47C00DCF69C /* Actions.plist */; };
+		AEAA8C251981A47C00DCF69C /* SystemActions.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEAA8C241981A47C00DCF69C /* SystemActions.plist */; };
 		AECC32AB1986CB7000F52ACE /* FaceTime.png in Resources */ = {isa = PBXBuildFile; fileRef = AECC32AA1986CB7000F52ACE /* FaceTime.png */; };
 		AECC32AD1986CC5200F52ACE /* YouTube.png in Resources */ = {isa = PBXBuildFile; fileRef = AECC32AC1986CC5200F52ACE /* YouTube.png */; };
 		AECC32B01986CFF100F52ACE /* Music.png in Resources */ = {isa = PBXBuildFile; fileRef = AECC32AE1986CFF100F52ACE /* Music.png */; };
@@ -29,21 +52,14 @@
 		AECC32B51986D1CC00F52ACE /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = AECC32B31986D1CC00F52ACE /* Twitter.png */; };
 		AECC32B71986E9EB00F52ACE /* Photos.png in Resources */ = {isa = PBXBuildFile; fileRef = AECC32B61986E9EB00F52ACE /* Photos.png */; };
 		AEE2CD0B197E93F1006DA67A /* YourActionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE2CD0A197E93F1006DA67A /* YourActionsViewController.m */; };
+		AEE3670C1997E69100030C00 /* OtherActions.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEE3670B1997E69100030C00 /* OtherActions.plist */; };
 		AEEFD6D31983BFE10039EBDC /* SchemeBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = AEEFD6D21983BFE10039EBDC /* SchemeBuilder.m */; };
 		AEEFD6D71983F2E60039EBDC /* Mail.png in Resources */ = {isa = PBXBuildFile; fileRef = AEEFD6D41983F2E60039EBDC /* Mail.png */; };
 		AEEFD6D91983F2E60039EBDC /* Messages.png in Resources */ = {isa = PBXBuildFile; fileRef = AEEFD6D61983F2E60039EBDC /* Messages.png */; };
 		AEEFD6DB1983F4360039EBDC /* Phone.png in Resources */ = {isa = PBXBuildFile; fileRef = AEEFD6DA1983F4360039EBDC /* Phone.png */; };
-		AEFB5664198E307700857921 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEFB5663198E307700857921 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AEA25F8219798B5B009A21AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AEA25F6319798B5B009A21AB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AEA25F6A19798B5B009A21AB;
-			remoteInfo = OpenIt;
-		};
 		AEA25FA119798B6F009A21AB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AEA25F6319798B5B009A21AB /* Project object */;
@@ -57,20 +73,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = AEA25F9419798B6F009A21AB;
 			remoteInfo = TodayViewWidget;
-		};
-		AEA25FAB19798BAE009A21AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AEA25F6319798B5B009A21AB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AEA25F6A19798B5B009A21AB;
-			remoteInfo = OpenIt;
-		};
-		AEA25FAD19798BAE009A21AB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AEA25F6319798B5B009A21AB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AEA25F6A19798B5B009A21AB;
-			remoteInfo = OpenIt;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -89,8 +91,32 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AE0C66F019A339B2004B3345 /* Dropbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dropbox.png; sourceTree = "<group>"; };
+		AE0C66F219A33A5D004B3345 /* Fantastical 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Fantastical 2.png"; sourceTree = "<group>"; };
+		AE0C66F319A33A5D004B3345 /* Foursquare.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Foursquare.png; sourceTree = "<group>"; };
+		AE0C66F619A33A8F004B3345 /* IFTTT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IFTTT.png; sourceTree = "<group>"; };
+		AE0C66F819A33AFE004B3345 /* Launch Center Pro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Launch Center Pro.png"; sourceTree = "<group>"; };
+		AE0C66FC19A33C17004B3345 /* Lyft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Lyft.png; sourceTree = "<group>"; };
+		AE0C66FE19A33C49004B3345 /* Swarm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Swarm.png; sourceTree = "<group>"; };
+		AE0C670019A33CAB004B3345 /* Pebble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pebble.png; sourceTree = "<group>"; };
+		AE0C670219A33CC5004B3345 /* Skype.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Skype.png; sourceTree = "<group>"; };
+		AE0C670419A33D31004B3345 /* Spotify.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spotify.png; sourceTree = "<group>"; };
+		AE0C670619A33D4E004B3345 /* Starbucks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Starbucks.png; sourceTree = "<group>"; };
+		AE0C670819A33D99004B3345 /* TodoMovies 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TodoMovies 3.png"; sourceTree = "<group>"; };
+		AE29FB58199A4B8A00AF4567 /* Custom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Custom.png; sourceTree = "<group>"; };
+		AE3544AE199A12C9003A70F5 /* Clear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Clear.png; sourceTree = "<group>"; };
+		AE3544B0199A1325003A70F5 /* Pocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pocket.png; sourceTree = "<group>"; };
+		AE3544B4199A13E1003A70F5 /* Uber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Uber.png; sourceTree = "<group>"; };
+		AE3544B6199A1901003A70F5 /* Messenger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Messenger.png; sourceTree = "<group>"; };
+		AE440B0D1A0828E6008BDC18 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "../Launch Screen.xib"; sourceTree = "<group>"; };
 		AE5EC7A1198B974C0040CF0A /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@2x.png"; sourceTree = "<group>"; };
 		AE5EC7A3198B982D0040CF0A /* Add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add@2x.png"; sourceTree = "<group>"; };
+		AE6A6D2F1994CDC600ABC6C7 /* Maps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Maps.png; sourceTree = "<group>"; };
+		AE6A6D311994CF2B00ABC6C7 /* Calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Calendar.png; sourceTree = "<group>"; };
+		AEA2267B1998F3FA009AF1DF /* Instagram.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Instagram.png; sourceTree = "<group>"; };
+		AEA2267D1998F3FD009AF1DF /* WhatsApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WhatsApp.png; sourceTree = "<group>"; };
+		AEA2267F1998F400009AF1DF /* Tweetbot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tweetbot.png; sourceTree = "<group>"; };
+		AEA226811999003D009AF1DF /* Safari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Safari.png; sourceTree = "<group>"; };
 		AEA25F6B19798B5B009A21AB /* OpenIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA25F6F19798B5B009A21AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AEA25F7019798B5B009A21AB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,9 +124,6 @@
 		AEA25F7319798B5B009A21AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		AEA25F7919798B5B009A21AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AEA25F7B19798B5B009A21AB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		AEA25F8119798B5B009A21AB /* OpenItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEA25F8619798B5B009A21AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AEA25F8719798B5B009A21AB /* OpenItTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenItTests.m; sourceTree = "<group>"; };
 		AEA25F9519798B6F009A21AB /* TodayViewWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayViewWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA25F9719798B6F009A21AB /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		AEA25F9B19798B6F009A21AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,7 +136,7 @@
 		AEAA8C1A198130E300DCF69C /* ActionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ActionDetailViewController.m; path = ../ActionDetailViewController.m; sourceTree = "<group>"; };
 		AEAA8C211981854E00DCF69C /* ChooseActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseActionViewController.h; sourceTree = "<group>"; };
 		AEAA8C221981854E00DCF69C /* ChooseActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseActionViewController.m; sourceTree = "<group>"; };
-		AEAA8C241981A47C00DCF69C /* Actions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Actions.plist; sourceTree = "<group>"; };
+		AEAA8C241981A47C00DCF69C /* SystemActions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SystemActions.plist; sourceTree = "<group>"; };
 		AECC32AA1986CB7000F52ACE /* FaceTime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FaceTime.png; sourceTree = "<group>"; };
 		AECC32AC1986CC5200F52ACE /* YouTube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YouTube.png; sourceTree = "<group>"; };
 		AECC32AE1986CFF100F52ACE /* Music.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Music.png; sourceTree = "<group>"; };
@@ -123,24 +146,16 @@
 		AECC32B61986E9EB00F52ACE /* Photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Photos.png; sourceTree = "<group>"; };
 		AEE2CD09197E93F1006DA67A /* YourActionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourActionsViewController.h; sourceTree = "<group>"; };
 		AEE2CD0A197E93F1006DA67A /* YourActionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourActionsViewController.m; sourceTree = "<group>"; };
+		AEE3670B1997E69100030C00 /* OtherActions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OtherActions.plist; sourceTree = "<group>"; };
 		AEEFD6D11983BFE10039EBDC /* SchemeBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SchemeBuilder.h; sourceTree = "<group>"; };
 		AEEFD6D21983BFE10039EBDC /* SchemeBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SchemeBuilder.m; sourceTree = "<group>"; };
 		AEEFD6D41983F2E60039EBDC /* Mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mail.png; sourceTree = "<group>"; };
 		AEEFD6D61983F2E60039EBDC /* Messages.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Messages.png; sourceTree = "<group>"; };
 		AEEFD6DA1983F4360039EBDC /* Phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Phone.png; sourceTree = "<group>"; };
-		AEFB5662198E307700857921 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		AEFB5663198E307700857921 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AEA25F6819798B5B009A21AB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AEA25F7E19798B5B009A21AB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -163,7 +178,6 @@
 			children = (
 				AEA25F6D19798B5B009A21AB /* OpenIt */,
 				AEA25F9919798B6F009A21AB /* TodayViewWidget */,
-				AEA25F8419798B5B009A21AB /* OpenItTests */,
 				AEA25F9619798B6F009A21AB /* Frameworks */,
 				AEA25F6C19798B5B009A21AB /* Products */,
 			);
@@ -173,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				AEA25F6B19798B5B009A21AB /* OpenIt.app */,
-				AEA25F8119798B5B009A21AB /* OpenItTests.xctest */,
 				AEA25F9519798B6F009A21AB /* TodayViewWidget.appex */,
 			);
 			name = Products;
@@ -183,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				AEA25FAA19798B81009A21AB /* OpenIt.entitlements */,
+				AEA25F7819798B5B009A21AB /* Main.storyboard */,
 				AEA25F7219798B5B009A21AB /* AppDelegate.h */,
 				AEA25F7319798B5B009A21AB /* AppDelegate.m */,
 				AEE2CD09197E93F1006DA67A /* YourActionsViewController.h */,
@@ -191,11 +205,9 @@
 				AEAA8C1A198130E300DCF69C /* ActionDetailViewController.m */,
 				AEAA8C211981854E00DCF69C /* ChooseActionViewController.h */,
 				AEAA8C221981854E00DCF69C /* ChooseActionViewController.m */,
-				AEFB5662198E307700857921 /* SettingsViewController.h */,
-				AEFB5663198E307700857921 /* SettingsViewController.m */,
 				AEEFD6D11983BFE10039EBDC /* SchemeBuilder.h */,
 				AEEFD6D21983BFE10039EBDC /* SchemeBuilder.m */,
-				AEA25F7819798B5B009A21AB /* Main.storyboard */,
+				AE440B0D1A0828E6008BDC18 /* Launch Screen.xib */,
 				AEA25F6E19798B5B009A21AB /* Supporting Files */,
 			);
 			path = OpenIt;
@@ -204,39 +216,46 @@
 		AEA25F6E19798B5B009A21AB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AEAA8C241981A47C00DCF69C /* Actions.plist */,
+				AEA25F7B19798B5B009A21AB /* Images.xcassets */,
+				AEAA8C241981A47C00DCF69C /* SystemActions.plist */,
+				AEE3670B1997E69100030C00 /* OtherActions.plist */,
 				AEEFD6D41983F2E60039EBDC /* Mail.png */,
 				AEEFD6DA1983F4360039EBDC /* Phone.png */,
 				AEEFD6D61983F2E60039EBDC /* Messages.png */,
 				AECC32AA1986CB7000F52ACE /* FaceTime.png */,
 				AECC32AC1986CC5200F52ACE /* YouTube.png */,
+				AE6A6D2F1994CDC600ABC6C7 /* Maps.png */,
+				AE6A6D311994CF2B00ABC6C7 /* Calendar.png */,
 				AECC32AE1986CFF100F52ACE /* Music.png */,
 				AECC32AF1986CFF100F52ACE /* iBooks.png */,
 				AECC32B21986D1CC00F52ACE /* Facebook.png */,
 				AECC32B31986D1CC00F52ACE /* Twitter.png */,
 				AECC32B61986E9EB00F52ACE /* Photos.png */,
-				AE5EC7A1198B974C0040CF0A /* Settings@2x.png */,
+				AEA2267B1998F3FA009AF1DF /* Instagram.png */,
+				AE3544B0199A1325003A70F5 /* Pocket.png */,
+				AE3544B4199A13E1003A70F5 /* Uber.png */,
+				AEA226811999003D009AF1DF /* Safari.png */,
+				AE3544AE199A12C9003A70F5 /* Clear.png */,
+				AE3544B6199A1901003A70F5 /* Messenger.png */,
+				AE0C66F219A33A5D004B3345 /* Fantastical 2.png */,
+				AE0C66F319A33A5D004B3345 /* Foursquare.png */,
+				AE0C66F019A339B2004B3345 /* Dropbox.png */,
+				AE0C66F619A33A8F004B3345 /* IFTTT.png */,
+				AE0C66F819A33AFE004B3345 /* Launch Center Pro.png */,
+				AE29FB58199A4B8A00AF4567 /* Custom.png */,
+				AEA2267D1998F3FD009AF1DF /* WhatsApp.png */,
+				AEA2267F1998F400009AF1DF /* Tweetbot.png */,
+				AE0C66FC19A33C17004B3345 /* Lyft.png */,
+				AE0C670219A33CC5004B3345 /* Skype.png */,
+				AE0C66FE19A33C49004B3345 /* Swarm.png */,
+				AE0C670019A33CAB004B3345 /* Pebble.png */,
+				AE0C670419A33D31004B3345 /* Spotify.png */,
+				AE0C670619A33D4E004B3345 /* Starbucks.png */,
+				AE0C670819A33D99004B3345 /* TodoMovies 3.png */,
 				AE5EC7A3198B982D0040CF0A /* Add@2x.png */,
-				AEA25F7B19798B5B009A21AB /* Images.xcassets */,
+				AE5EC7A1198B974C0040CF0A /* Settings@2x.png */,
 				AEA25F6F19798B5B009A21AB /* Info.plist */,
 				AEA25F7019798B5B009A21AB /* main.m */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AEA25F8419798B5B009A21AB /* OpenItTests */ = {
-			isa = PBXGroup;
-			children = (
-				AEA25F8719798B5B009A21AB /* OpenItTests.m */,
-				AEA25F8519798B5B009A21AB /* Supporting Files */,
-			);
-			path = OpenItTests;
-			sourceTree = "<group>";
-		};
-		AEA25F8519798B5B009A21AB /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				AEA25F8619798B5B009A21AB /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -292,26 +311,6 @@
 			productReference = AEA25F6B19798B5B009A21AB /* OpenIt.app */;
 			productType = "com.apple.product-type.application";
 		};
-		AEA25F8019798B5B009A21AB /* OpenItTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AEA25F8E19798B5B009A21AB /* Build configuration list for PBXNativeTarget "OpenItTests" */;
-			buildPhases = (
-				AEA25F7D19798B5B009A21AB /* Sources */,
-				AEA25F7E19798B5B009A21AB /* Frameworks */,
-				AEA25F7F19798B5B009A21AB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AEA25F8319798B5B009A21AB /* PBXTargetDependency */,
-				AEA25FAC19798BAE009A21AB /* PBXTargetDependency */,
-				AEA25FAE19798BAE009A21AB /* PBXTargetDependency */,
-			);
-			name = OpenItTests;
-			productName = OpenItTests;
-			productReference = AEA25F8119798B5B009A21AB /* OpenItTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		AEA25F9419798B6F009A21AB /* TodayViewWidget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AEA25FA619798B6F009A21AB /* Build configuration list for PBXNativeTarget "TodayViewWidget" */;
@@ -347,10 +346,6 @@
 							};
 						};
 					};
-					AEA25F8019798B5B009A21AB = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = AEA25F6A19798B5B009A21AB;
-					};
 					AEA25F9419798B6F009A21AB = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = VKVDVFQ5UA;
@@ -377,7 +372,6 @@
 			targets = (
 				AEA25F6A19798B5B009A21AB /* OpenIt */,
 				AEA25F9419798B6F009A21AB /* TodayViewWidget */,
-				AEA25F8019798B5B009A21AB /* OpenItTests */,
 			);
 		};
 /* End PBXProject section */
@@ -387,28 +381,46 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEAA8C251981A47C00DCF69C /* Actions.plist in Resources */,
+				AE3544B5199A13E1003A70F5 /* Uber.png in Resources */,
+				AE3544B1199A1325003A70F5 /* Pocket.png in Resources */,
+				AEAA8C251981A47C00DCF69C /* SystemActions.plist in Resources */,
+				AEA2267C1998F3FA009AF1DF /* Instagram.png in Resources */,
+				AEE3670C1997E69100030C00 /* OtherActions.plist in Resources */,
+				AEA2267E1998F3FD009AF1DF /* WhatsApp.png in Resources */,
+				AE0C670519A33D31004B3345 /* Spotify.png in Resources */,
 				AECC32AD1986CC5200F52ACE /* YouTube.png in Resources */,
+				AE0C66F719A33A8F004B3345 /* IFTTT.png in Resources */,
+				AE0C66FD19A33C17004B3345 /* Lyft.png in Resources */,
+				AE0C66F119A339B2004B3345 /* Dropbox.png in Resources */,
+				AE0C66F519A33A5D004B3345 /* Foursquare.png in Resources */,
+				AE3544B7199A1901003A70F5 /* Messenger.png in Resources */,
 				AEEFD6D71983F2E60039EBDC /* Mail.png in Resources */,
+				AE29FB59199A4B8A00AF4567 /* Custom.png in Resources */,
 				AE5EC7A2198B974C0040CF0A /* Settings@2x.png in Resources */,
 				AEEFD6D91983F2E60039EBDC /* Messages.png in Resources */,
 				AECC32B71986E9EB00F52ACE /* Photos.png in Resources */,
 				AECC32B11986CFF100F52ACE /* iBooks.png in Resources */,
 				AEA25F7A19798B5B009A21AB /* Main.storyboard in Resources */,
+				AEA226821999003D009AF1DF /* Safari.png in Resources */,
+				AE6A6D321994CF2B00ABC6C7 /* Calendar.png in Resources */,
+				AEA226801998F400009AF1DF /* Tweetbot.png in Resources */,
 				AECC32B51986D1CC00F52ACE /* Twitter.png in Resources */,
 				AEA25F7C19798B5B009A21AB /* Images.xcassets in Resources */,
+				AE0C66F919A33AFE004B3345 /* Launch Center Pro.png in Resources */,
 				AECC32AB1986CB7000F52ACE /* FaceTime.png in Resources */,
 				AECC32B01986CFF100F52ACE /* Music.png in Resources */,
+				AE0C66FF19A33C49004B3345 /* Swarm.png in Resources */,
+				AE3544AF199A12C9003A70F5 /* Clear.png in Resources */,
+				AE0C670919A33D99004B3345 /* TodoMovies 3.png in Resources */,
+				AE6A6D301994CDC600ABC6C7 /* Maps.png in Resources */,
+				AE0C670319A33CC5004B3345 /* Skype.png in Resources */,
+				AE0C66F419A33A5D004B3345 /* Fantastical 2.png in Resources */,
+				AE0C670719A33D4E004B3345 /* Starbucks.png in Resources */,
 				AECC32B41986D1CC00F52ACE /* Facebook.png in Resources */,
 				AEEFD6DB1983F4360039EBDC /* Phone.png in Resources */,
 				AE5EC7A4198B982D0040CF0A /* Add@2x.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AEA25F7F19798B5B009A21AB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				AE0C670119A33CAB004B3345 /* Pebble.png in Resources */,
+				AE440B0E1A0828E6008BDC18 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,15 +445,6 @@
 				AEEFD6D31983BFE10039EBDC /* SchemeBuilder.m in Sources */,
 				AEA25F7119798B5B009A21AB /* main.m in Sources */,
 				AEAA8C1B198130E300DCF69C /* ActionDetailViewController.m in Sources */,
-				AEFB5664198E307700857921 /* SettingsViewController.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AEA25F7D19798B5B009A21AB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AEA25F8819798B5B009A21AB /* OpenItTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,11 +459,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AEA25F8319798B5B009A21AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AEA25F6A19798B5B009A21AB /* OpenIt */;
-			targetProxy = AEA25F8219798B5B009A21AB /* PBXContainerItemProxy */;
-		};
 		AEA25FA219798B6F009A21AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AEA25F9419798B6F009A21AB /* TodayViewWidget */;
@@ -470,16 +468,6 @@
 			isa = PBXTargetDependency;
 			target = AEA25F9419798B6F009A21AB /* TodayViewWidget */;
 			targetProxy = AEA25FA419798B6F009A21AB /* PBXContainerItemProxy */;
-		};
-		AEA25FAC19798BAE009A21AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AEA25F6A19798B5B009A21AB /* OpenIt */;
-			targetProxy = AEA25FAB19798BAE009A21AB /* PBXContainerItemProxy */;
-		};
-		AEA25FAE19798BAE009A21AB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AEA25F6A19798B5B009A21AB /* OpenIt */;
-			targetProxy = AEA25FAD19798BAE009A21AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -575,10 +563,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = OpenIt/OpenIt.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OpenIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -591,10 +582,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = OpenIt/OpenIt.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = OpenIt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -603,43 +597,11 @@
 			};
 			name = Release;
 		};
-		AEA25F8F19798B5B009A21AB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OpenIt.app/OpenIt";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OpenItTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Debug;
-		};
-		AEA25F9019798B5B009A21AB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OpenIt.app/OpenIt";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = OpenItTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-			};
-			name = Release;
-		};
 		AEA25FA719798B6F009A21AB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_ENTITLEMENTS = TodayViewWidget/TodayViewWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -658,6 +620,8 @@
 		AEA25FA819798B6F009A21AB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_ENTITLEMENTS = TodayViewWidget/TodayViewWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -686,15 +650,6 @@
 			buildConfigurations = (
 				AEA25F8C19798B5B009A21AB /* Debug */,
 				AEA25F8D19798B5B009A21AB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AEA25F8E19798B5B009A21AB /* Build configuration list for PBXNativeTarget "OpenItTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AEA25F8F19798B5B009A21AB /* Debug */,
-				AEA25F9019798B5B009A21AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

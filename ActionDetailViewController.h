@@ -11,7 +11,7 @@
 @interface ActionDetailViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) NSMutableArray *shortcutArray;
-@property (nonatomic) BOOL pushedDetail;
+@property (nonatomic) NSInteger detailIndex;
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
