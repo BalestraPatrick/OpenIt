@@ -117,15 +117,11 @@
     [self saveActions];
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    //[tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"DetailAction"]) {
         ActionDetailViewController *actionDetail = (ActionDetailViewController *)segue.destinationViewController;
         actionDetail.shortcutArray = [self.actions[[self.tableView indexPathForSelectedRow].row] mutableCopy];
-        actionDetail.detailIndex = [self.tableView indexPathForSelectedRow].row;
+        actionDetail.newAction = YES;
     }
 }
 

@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.title = self.shortcutArray[0][@"Title"];
     
     if (![self.shortcutArray[0][@"Title"] isEqualToString:@""]) {
@@ -34,24 +34,24 @@
     
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-    self.detailIndex = NSNotFound;
-}
-
 - (IBAction)save:(id)sender {
     [self.view endEditing:YES];
 
     if (self.shortcutArray.count > 0) {
         if (![self.shortcutArray[0][@"Title"] isEqualToString:@""]) {
-            if (!self.detailIndex) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:@"AddNewAction" object:self.shortcutArray];
-            } else {
+
+            if (self.newAction) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"EditAction" object:self.shortcutArray];
+            } else {
+                [[NSNotificationCenter defaultCenter] postNotificationName:@"AddNewAction" object:self.shortcutArray];
             }
             
-            NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];
-            [allViewControllers removeObjectAtIndex:1];
-            self.navigationController.viewControllers = allViewControllers;
+            if (!self.newAction) {
+                // Remove Choose Action View Controller from the hierarchy to pop directly to Your Actions View Controller
+                NSMutableArray *allViewControllers = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];
+                [allViewControllers removeObjectAtIndex:1];
+                self.navigationController.viewControllers = allViewControllers;
+            }
             
             [self.navigationController popViewControllerAnimated:YES];
             
